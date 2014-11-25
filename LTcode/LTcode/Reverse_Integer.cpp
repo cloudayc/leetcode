@@ -5,10 +5,26 @@
 //  Created by wyq on 14/11/24.
 //  Copyright (c) 2014年 cloudayc. All rights reserved.
 //
+
+/* Description:
+ 
+ Reverse digits of an integer.
+ 
+ Example1: x = 123, return 321
+ Example2: x = -123, return -321
+ 
+ */
+
 #include <cstdlib>
+#include <iostream>
 
 class Solution {
 public:
+    void calc()
+    {
+        std::cout << this->reverse(123456) << std::endl;
+    }
+    
     int reverse(int x) {
         
         int int_max = 2147483647;
