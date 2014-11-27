@@ -23,7 +23,6 @@ public:
     {
         std::cout << this->sqrt(8) << std::endl;
         std::cout << sqrt(8) << std::endl;
-        
     }
     
     int sqrt(int x) {

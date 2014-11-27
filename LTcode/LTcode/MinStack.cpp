@@ -17,19 +17,48 @@
  
  */
 
+#include <stack>
+
 class MinStack {
+private:
+    std::stack<int> s;
+    std::stack<int> m;
+    
 public:
+    void calc()
+    {
+        for (int i = 2; i < 5; ++i) {
+            this->push(i * 2);
+        }
+        this->push(1);
+        
+//        int x = this->getMin();
+    }
+    
     void push(int x) {
+        s.push(x);
+        if (m.empty() || x <= m.top())
+        {
+            m.push(x);
+        }
     }
     
     void pop() {
+        if (s.empty())
+            return;
+        
+        if (s.top() == m.top())
+        {
+            m.pop();
+        }
+        s.pop();
     }
     
     int top() {
-        return 0;
+        return s.top();
     }
     
     int getMin() {
-        return 0;
+        return m.top();
     }
 };

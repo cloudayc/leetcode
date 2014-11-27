@@ -20,9 +20,43 @@
  
  */
 
+#include <iostream>
+#include <string>
+using namespace std;
+
 class Solution {
 public:
+    void calc()
+    {
+        string s;
+        getline(cin, s);
+        printf("%d\n", this->lengthOfLastWord(s.c_str()));
+    }
+    
+    bool isAlpha(char c)
+    {
+        return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+    }
+    
     int lengthOfLastWord(const char *s) {
-        return 0;
+        const char *p = s;
+        
+        while (*++p != '\0');
+        
+        p--;
+        
+        while (p >= s && !this->isAlpha(*p))
+        {
+            p--;
+        }
+        
+        int cnt = 0;
+        while (p >= s && this->isAlpha(*p))
+        {
+            p--;
+            ++cnt;
+        }
+        
+        return cnt;
     }
 };

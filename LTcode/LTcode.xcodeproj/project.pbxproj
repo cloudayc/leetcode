@@ -17,6 +17,18 @@
 		29DBA2B71A242AAD002FB30B /* MinStack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2B61A242AAD002FB30B /* MinStack.cpp */; };
 		29DBA2B91A242AC2002FB30B /* Count_and_Say.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2B81A242AC2002FB30B /* Count_and_Say.cpp */; };
 		29DBA2BB1A242AE1002FB30B /* RemoveElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2BA1A242AE1002FB30B /* RemoveElement.cpp */; };
+		29DBA2BF1A25D6AE002FB30B /* Binary_Tree_Level_Order_Traversal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2BE1A25D6AE002FB30B /* Binary_Tree_Level_Order_Traversal.cpp */; };
+		29DBA2C11A25D76B002FB30B /* zigzag-conversion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2C01A25D76B002FB30B /* zigzag-conversion.cpp */; };
+		29DBA2C31A25D7B6002FB30B /* string-to-integer-atoi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2C21A25D7B6002FB30B /* string-to-integer-atoi.cpp */; };
+		29DBA2C51A25D7E2002FB30B /* palindrome-number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2C41A25D7E2002FB30B /* palindrome-number.cpp */; };
+		29DBA2C71A25D834002FB30B /* roman-to-integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2C61A25D834002FB30B /* roman-to-integer.cpp */; };
+		29DBA2C91A25D851002FB30B /* valid-palindrome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2C81A25D851002FB30B /* valid-palindrome.cpp */; };
+		29DBA2CB1A25D86E002FB30B /* longest-common-prefix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2CA1A25D86E002FB30B /* longest-common-prefix.cpp */; };
+		29DBA2CD1A25D88E002FB30B /* pascals-triangle-ii.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2CC1A25D88E002FB30B /* pascals-triangle-ii.cpp */; };
+		29DBA2CF1A25D8B4002FB30B /* pascals-triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2CE1A25D8B4002FB30B /* pascals-triangle.cpp */; };
+		29DBA2D11A25D8E2002FB30B /* path-sum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2D01A25D8E2002FB30B /* path-sum.cpp */; };
+		29DBA2D31A25D909002FB30B /* minimum-depth-of-binary-tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2D21A25D909002FB30B /* minimum-depth-of-binary-tree.cpp */; };
+		29DBA2D51A25D929002FB30B /* balanced-binary-tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2D41A25D929002FB30B /* balanced-binary-tree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +55,18 @@
 		29DBA2B61A242AAD002FB30B /* MinStack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinStack.cpp; sourceTree = "<group>"; };
 		29DBA2B81A242AC2002FB30B /* Count_and_Say.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Count_and_Say.cpp; sourceTree = "<group>"; };
 		29DBA2BA1A242AE1002FB30B /* RemoveElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RemoveElement.cpp; sourceTree = "<group>"; };
+		29DBA2BE1A25D6AE002FB30B /* Binary_Tree_Level_Order_Traversal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Binary_Tree_Level_Order_Traversal.cpp; sourceTree = "<group>"; };
+		29DBA2C01A25D76B002FB30B /* zigzag-conversion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "zigzag-conversion.cpp"; sourceTree = "<group>"; };
+		29DBA2C21A25D7B6002FB30B /* string-to-integer-atoi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "string-to-integer-atoi.cpp"; sourceTree = "<group>"; };
+		29DBA2C41A25D7E2002FB30B /* palindrome-number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "palindrome-number.cpp"; sourceTree = "<group>"; };
+		29DBA2C61A25D834002FB30B /* roman-to-integer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "roman-to-integer.cpp"; sourceTree = "<group>"; };
+		29DBA2C81A25D851002FB30B /* valid-palindrome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "valid-palindrome.cpp"; sourceTree = "<group>"; };
+		29DBA2CA1A25D86E002FB30B /* longest-common-prefix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "longest-common-prefix.cpp"; sourceTree = "<group>"; };
+		29DBA2CC1A25D88E002FB30B /* pascals-triangle-ii.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "pascals-triangle-ii.cpp"; sourceTree = "<group>"; };
+		29DBA2CE1A25D8B4002FB30B /* pascals-triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "pascals-triangle.cpp"; sourceTree = "<group>"; };
+		29DBA2D01A25D8E2002FB30B /* path-sum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "path-sum.cpp"; path = "problems/path-sum.cpp"; sourceTree = "<group>"; };
+		29DBA2D21A25D909002FB30B /* minimum-depth-of-binary-tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "minimum-depth-of-binary-tree.cpp"; sourceTree = "<group>"; };
+		29DBA2D41A25D929002FB30B /* balanced-binary-tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "balanced-binary-tree.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +109,18 @@
 				29DBA2B61A242AAD002FB30B /* MinStack.cpp */,
 				29DBA2B81A242AC2002FB30B /* Count_and_Say.cpp */,
 				29DBA2BA1A242AE1002FB30B /* RemoveElement.cpp */,
+				29DBA2C01A25D76B002FB30B /* zigzag-conversion.cpp */,
+				29DBA2C21A25D7B6002FB30B /* string-to-integer-atoi.cpp */,
+				29DBA2C41A25D7E2002FB30B /* palindrome-number.cpp */,
+				29DBA2C61A25D834002FB30B /* roman-to-integer.cpp */,
+				29DBA2C81A25D851002FB30B /* valid-palindrome.cpp */,
+				29DBA2CA1A25D86E002FB30B /* longest-common-prefix.cpp */,
+				29DBA2CC1A25D88E002FB30B /* pascals-triangle-ii.cpp */,
+				29DBA2CE1A25D8B4002FB30B /* pascals-triangle.cpp */,
+				29DBA2BE1A25D6AE002FB30B /* Binary_Tree_Level_Order_Traversal.cpp */,
+				29DBA2D01A25D8E2002FB30B /* path-sum.cpp */,
+				29DBA2D21A25D909002FB30B /* minimum-depth-of-binary-tree.cpp */,
+				29DBA2D41A25D929002FB30B /* balanced-binary-tree.cpp */,
 			);
 			path = LTcode;
 			sourceTree = "<group>";
@@ -148,13 +184,25 @@
 				29DBA2B51A242A94002FB30B /* MergeTwoSortedLists.cpp in Sources */,
 				29DBA2B21A242A65002FB30B /* Length_of_LastWord.cpp in Sources */,
 				29DBA2A21A23456D002FB30B /* main.cpp in Sources */,
+				29DBA2BF1A25D6AE002FB30B /* Binary_Tree_Level_Order_Traversal.cpp in Sources */,
+				29DBA2D11A25D8E2002FB30B /* path-sum.cpp in Sources */,
 				29DBA2B01A242A4D002FB30B /* AddBinary.cpp in Sources */,
+				29DBA2C11A25D76B002FB30B /* zigzag-conversion.cpp in Sources */,
+				29DBA2C31A25D7B6002FB30B /* string-to-integer-atoi.cpp in Sources */,
+				29DBA2CF1A25D8B4002FB30B /* pascals-triangle.cpp in Sources */,
+				29DBA2CD1A25D88E002FB30B /* pascals-triangle-ii.cpp in Sources */,
 				29DBA2BB1A242AE1002FB30B /* RemoveElement.cpp in Sources */,
 				29DBA2A91A2345A7002FB30B /* Reverse_Integer.cpp in Sources */,
+				29DBA2C51A25D7E2002FB30B /* palindrome-number.cpp in Sources */,
 				29DBA2AD1A242A2B002FB30B /* PlusOne.cpp in Sources */,
 				29DBA2B91A242AC2002FB30B /* Count_and_Say.cpp in Sources */,
 				29DBA2AB1A242139002FB30B /* sqrt_x.cpp in Sources */,
+				29DBA2D31A25D909002FB30B /* minimum-depth-of-binary-tree.cpp in Sources */,
+				29DBA2C91A25D851002FB30B /* valid-palindrome.cpp in Sources */,
+				29DBA2D51A25D929002FB30B /* balanced-binary-tree.cpp in Sources */,
+				29DBA2CB1A25D86E002FB30B /* longest-common-prefix.cpp in Sources */,
 				29DBA2B71A242AAD002FB30B /* MinStack.cpp in Sources */,
+				29DBA2C71A25D834002FB30B /* roman-to-integer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

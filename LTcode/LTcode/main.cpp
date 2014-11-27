@@ -8,7 +8,13 @@
 
 
 //#include "Reverse_Integer.cpp"
-#include "sqrt_x.cpp"
+//#include "sqrt_x.cpp"
+//#include "AddBinary.cpp"
+//#include "PlusOne.cpp"
+//#include "Count_and_Say.cpp"
+//#include "Length_of_LastWord.cpp"
+#include "string-to-integer-atoi.cpp"
+//#include "MinStack.cpp"
 
 int main(int argc, const char * argv[]) {
 

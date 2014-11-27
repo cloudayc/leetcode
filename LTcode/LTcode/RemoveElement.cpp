@@ -16,8 +16,19 @@
 
 class Solution {
 public:
-    int removeElement(int A[], int n, int elem) {
+    void calc()
+    {
         
-        return 0;
+    }
+    
+    int removeElement(int A[], int n, int elem) {
+        int nLen = 0;
+        for (int i = 0; i < n; ++i) {
+            if (A[i] != elem)
+            {
+                A[nLen++] = A[i];
+            }
+        }
+        return nLen;
     }
 };
