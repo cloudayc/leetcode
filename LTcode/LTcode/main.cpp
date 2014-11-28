@@ -13,8 +13,15 @@
 //#include "PlusOne.cpp"
 //#include "Count_and_Say.cpp"
 //#include "Length_of_LastWord.cpp"
-#include "string-to-integer-atoi.cpp"
+//#include "string-to-integer-atoi.cpp"
 //#include "MinStack.cpp"
+//#include "zigzag-conversion.cpp"
+//#include "palindrome-number.cpp"
+//#include "roman-to-integer.cpp"
+//#include "valid-palindrome.cpp"
+//#include "longest-common-prefix.cpp"
+//#include "pascals-triangle-ii.cpp"
+#include "pascals-triangle.cpp"
 
 int main(int argc, const char * argv[]) {
 

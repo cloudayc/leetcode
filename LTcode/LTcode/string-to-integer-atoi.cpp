@@ -48,37 +48,59 @@ public:
         return true;
     }
     
+    bool checkDigit(char c)
+    {
+        return c >= '0' && c <= '9';
+    }
+    
     int atoi(const char *str) {
         if (!str || !*str) return 0;
         
         const char *head = str;
-        while (*head == ' ' || *head == '+' || *head == '-') head++;
         
-        if (!this->checkValid(head))
-            return 0;
-        
-        if (head - 2 >= str)
-        {
-            if (*(head - 2) == '-'
-                || *(head - 2) == '+')
-                return 0;
-        }
+        while (*head < '0' || *head > '9') head++;
         
         int sign = 1;
         if (head - 1 >= str)
         {
             if (*(head - 1) == '-')
                 sign = -1;
+            else if (*(head - 1) == '+' || *(head - 1) == ' ')
+                sign = 1;
+            else
+                return 0;
+            
+            const char *flt = head - 2;
+            while (flt >= str)
+            {
+                if (*flt != ' ')
+                    return 0;
+                flt--;
+            }
         }
         
+        
         int cnt = 0;
-        while (*head >= '0' && *head <= '9')
+        while (this->checkDigit(*head))
         {
+            int num = sign * (*head - '0');
+            if (cnt >= 214748364)
+            {
+                if (num > 7 || this->checkDigit(*(head + 1)) || cnt >= 1e9)
+                    num = 7;
+                return 2147483640 + num;
+            }
+            if (cnt <= -214748364)
+            {
+                if (num < -8 || this->checkDigit(*(head + 1)) || cnt <= -1e9)
+                    num = -8;
+                return -2147483640 + num;
+            }
             cnt *= 10;
-            cnt += *head - '0';
+            cnt += num;
             head++;
         }
         
-        return cnt * sign;
+        return cnt;
     }
 };
