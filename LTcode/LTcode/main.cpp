@@ -21,7 +21,8 @@
 //#include "valid-palindrome.cpp"
 //#include "longest-common-prefix.cpp"
 //#include "pascals-triangle-ii.cpp"
-#include "pascals-triangle.cpp"
+//#include "pascals-triangle.cpp"
+#include "path-sum.cpp"
 
 int main(int argc, const char * argv[]) {
 

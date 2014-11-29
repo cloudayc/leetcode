@@ -49,7 +49,32 @@ public:
     }
     
     vector<vector<int> > levelOrder(TreeNode *root) {
+        
         vector<vector<int> > v;
+        if (!root) {
+            return v;
+        }
+        vector<TreeNode *> list;
+        list.push_back(root);
+        
+        while (!list.empty()) {
+            vector<int> iv;
+            vector<TreeNode *> tlist;
+            for (vector<TreeNode *>::iterator iter = list.begin(); iter!= list.end(); ++iter)
+            {
+                iv.push_back((*iter)->val);
+                if ((*iter)->left)
+                    tlist.push_back((*iter)->left);
+                if ((*iter)->right)
+                    tlist.push_back((*iter)->right);
+            }
+            list.clear();
+            list = tlist;
+            
+            v.push_back(iv);
+            // levelOrderBottom
+//            v.insert(v.begin(), iv);
+        }
         return v;
     }
 };

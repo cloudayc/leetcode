@@ -26,9 +26,10 @@
 		29DBA2CB1A25D86E002FB30B /* longest-common-prefix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2CA1A25D86E002FB30B /* longest-common-prefix.cpp */; };
 		29DBA2CD1A25D88E002FB30B /* pascals-triangle-ii.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2CC1A25D88E002FB30B /* pascals-triangle-ii.cpp */; };
 		29DBA2CF1A25D8B4002FB30B /* pascals-triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2CE1A25D8B4002FB30B /* pascals-triangle.cpp */; };
-		29DBA2D11A25D8E2002FB30B /* path-sum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2D01A25D8E2002FB30B /* path-sum.cpp */; };
 		29DBA2D31A25D909002FB30B /* minimum-depth-of-binary-tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2D21A25D909002FB30B /* minimum-depth-of-binary-tree.cpp */; };
 		29DBA2D51A25D929002FB30B /* balanced-binary-tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2D41A25D929002FB30B /* balanced-binary-tree.cpp */; };
+		771E3D281A29F06600A3C3A5 /* path-sum-ii.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 771E3D271A29F06600A3C3A5 /* path-sum-ii.cpp */; };
+		771E3D2A1A2A062900A3C3A5 /* path-sum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 771E3D291A2A062900A3C3A5 /* path-sum.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,9 +65,10 @@
 		29DBA2CA1A25D86E002FB30B /* longest-common-prefix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "longest-common-prefix.cpp"; sourceTree = "<group>"; };
 		29DBA2CC1A25D88E002FB30B /* pascals-triangle-ii.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "pascals-triangle-ii.cpp"; sourceTree = "<group>"; };
 		29DBA2CE1A25D8B4002FB30B /* pascals-triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "pascals-triangle.cpp"; sourceTree = "<group>"; };
-		29DBA2D01A25D8E2002FB30B /* path-sum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "path-sum.cpp"; path = "problems/path-sum.cpp"; sourceTree = "<group>"; };
 		29DBA2D21A25D909002FB30B /* minimum-depth-of-binary-tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "minimum-depth-of-binary-tree.cpp"; sourceTree = "<group>"; };
 		29DBA2D41A25D929002FB30B /* balanced-binary-tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "balanced-binary-tree.cpp"; sourceTree = "<group>"; };
+		771E3D271A29F06600A3C3A5 /* path-sum-ii.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "path-sum-ii.cpp"; sourceTree = "<group>"; };
+		771E3D291A2A062900A3C3A5 /* path-sum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "path-sum.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,8 @@
 				29DBA2CC1A25D88E002FB30B /* pascals-triangle-ii.cpp */,
 				29DBA2CE1A25D8B4002FB30B /* pascals-triangle.cpp */,
 				29DBA2BE1A25D6AE002FB30B /* Binary_Tree_Level_Order_Traversal.cpp */,
-				29DBA2D01A25D8E2002FB30B /* path-sum.cpp */,
+				771E3D291A2A062900A3C3A5 /* path-sum.cpp */,
+				771E3D271A29F06600A3C3A5 /* path-sum-ii.cpp */,
 				29DBA2D21A25D909002FB30B /* minimum-depth-of-binary-tree.cpp */,
 				29DBA2D41A25D929002FB30B /* balanced-binary-tree.cpp */,
 			);
@@ -185,7 +188,8 @@
 				29DBA2B21A242A65002FB30B /* Length_of_LastWord.cpp in Sources */,
 				29DBA2A21A23456D002FB30B /* main.cpp in Sources */,
 				29DBA2BF1A25D6AE002FB30B /* Binary_Tree_Level_Order_Traversal.cpp in Sources */,
-				29DBA2D11A25D8E2002FB30B /* path-sum.cpp in Sources */,
+				771E3D2A1A2A062900A3C3A5 /* path-sum.cpp in Sources */,
+				771E3D281A29F06600A3C3A5 /* path-sum-ii.cpp in Sources */,
 				29DBA2B01A242A4D002FB30B /* AddBinary.cpp in Sources */,
 				29DBA2C11A25D76B002FB30B /* zigzag-conversion.cpp in Sources */,
 				29DBA2C31A25D7B6002FB30B /* string-to-integer-atoi.cpp in Sources */,
