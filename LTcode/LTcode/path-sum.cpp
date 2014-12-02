@@ -30,6 +30,7 @@
 #include <iostream>
 #include <stack>
 #include <vector>
+#include <iomanip>
 #include <string>
 using namespace std;
 
@@ -54,63 +55,107 @@ public:
         node->right = this->factory(depth - 1);
         return node;
     }
+    void postorder(TreeNode* p, int indent=0)
+    {
+        if(p != NULL) {
+            if(p->left) postorder(p->left, indent+4);
+            if(p->right) postorder(p->right, indent+4);
+            if (indent) {
+                std::cout << std::setw(indent) << ' ';
+            }
+            cout<< p->val << "\n ";
+        }
+    }
     
     void print(TreeNode *root)
     {
+        vector<string> output;
+        
         vector<TreeNode *> v;
         v.push_back(root);
         
+        int spaceCnt = 32;
         while (!v.empty()) {
             vector<TreeNode *> tv(v);
             v.clear();
             
             bool hasValidNode = false;
             string symbol("");
+            string values("");
             for (vector<TreeNode *>::iterator iter = tv.begin(); iter != tv.end(); ++iter)
             {
                 if ((*iter)->val == INT_MAX)
-                    cout << '*' << "  ";
+                    values.append("*");
                 else
-                    cout << (*iter)->val << "  ";
+                    values.append(to_string((*iter)->val));
+                values.append("  ");
                 
                 if ((*iter)->left)
                 {
                     hasValidNode = true;
-                    v.push_back((*iter));
-                    symbol.append("/ ");
+                    v.push_back((*iter)->left);
+//                    symbol.append("/");
+                    symbol.append(" ");
                 }
                 else
                 {
                     TreeNode *node = new TreeNode(INT_MAX); // mem leak
                     v.push_back(node);
-                    symbol.append("- ");
+                    symbol.append(" ");
+//                    symbol.append("-");
                 }
+                
+                values.append(string(spaceCnt, ' '));
                 if ((*iter)->right)
                 {
                     hasValidNode = true;
-                    v.push_back((*iter));
-                    symbol.append("\\ ");
+                    v.push_back((*iter)->right);
+//                    symbol.append("\\");
+                    symbol.append(" ");
                 }
                 else
                 {
                     TreeNode *node = new TreeNode(INT_MAX); // mem leak
                     v.push_back(node);
-                    symbol.append("- ");
+                    symbol.append(" ");
+                    //                    symbol.append("-");
                 }
+                symbol.append(string(spaceCnt, ' '));
+//                symbol.append(" ");
             }
-            cout << endl;
+            spaceCnt /= 2;
+        
+            output.push_back(values);
             if (hasValidNode)
-                cout << symbol << endl;
+                output.push_back(symbol);
             else
                 v.clear();
-            
+        }
+        
+        string last = output.back();
+        size_t len = last.length() / 2;
+        int flag = 0;
+        int spaceCut = 1;
+        for (vector<string>::iterator iter = output.begin(); iter != output.end(); ++iter)
+        {
+            cout << string(len - spaceCut, ' ');
+//            cout << string(len, ' ');
+            cout << *iter << endl;
+            if (flag++ & 1)
+            {
+                len -= spaceCut;
+                spaceCut *= 2;
+            }
+            if (len <= 0)
+                len = 0;
         }
     }
     
     void calc()
     {
-        TreeNode *root = this->factory(3);
-        print(root);
+        TreeNode *root = this->factory(5);
+        postorder(root);
+//        print(root);
     }
     
     bool hasPathSum(TreeNode *root, int sum) {
