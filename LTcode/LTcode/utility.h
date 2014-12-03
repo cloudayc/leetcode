@@ -14,9 +14,11 @@
 class Utility
 {
 public:
-    TreeNode *factory(int depth);
-    void postorder(TreeNode* p, int indent=0);
-    void print(TreeNode *root);
+    static TreeNode *factory(int depth);
+    static int treeDepth(TreeNode *root, int depth = 0);
+    static void printTree(TreeNode *root);
+    
+    static void print(TreeNode *root);
 };
 
 #endif

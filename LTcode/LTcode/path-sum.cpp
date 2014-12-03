@@ -27,19 +27,14 @@
 /**
  * Definition for binary tree
  */
+#include "utility.h"
+
 #include <iostream>
 #include <stack>
 #include <vector>
 #include <iomanip>
 #include <string>
 using namespace std;
-
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
 
 class Solution {
 public:
@@ -153,8 +148,11 @@ public:
     
     void calc()
     {
-        TreeNode *root = this->factory(5);
-        postorder(root);
+        TreeNode *root = Utility::factory(6);
+        cout << Utility::treeDepth(root, 0) << endl;
+        Utility::print(root);
+//        TreeNode *root = this->factory(5);
+//        postorder(root);
 //        print(root);
     }
     

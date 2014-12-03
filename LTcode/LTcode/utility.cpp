@@ -24,22 +24,82 @@ TreeNode *Utility::factory(int depth)
         return NULL;
     
     TreeNode *node = new TreeNode(arc4random() % 20);
-    node->left = this->factory(depth - 1);
-    node->right = this->factory(depth - 1);
+    node->left = Utility::factory(depth - 1);
+    node->right = Utility::factory(depth - 1);
     return node;
 }
 
-void Utility::postorder(TreeNode* p, int indent)
+void Utility::printTree(TreeNode *root)
 {
-    if(p != NULL) {
-        if(p->left) postorder(p->left, indent+4);
-        if(p->right) postorder(p->right, indent+4);
-        if (indent) {
-            std::cout << std::setw(indent) << ' ';
+    int depth = Utility::treeDepth(root);
+    int maxLeafCount = 1 << depth;
+    int leafLength = maxLeafCount + maxLeafCount - 1;
+    
+    int innerSpaces = 0;
+    int prefixSpaces = leafLength / 2;
+    
+    char noneValue = '*';
+    char spaceChar = '\t';
+    vector<TreeNode *> v;
+    v.push_back(root);
+    while (!v.empty()) {
+        vector<TreeNode *> tv(v);
+        v.clear();
+        
+        // calc depth
+        
+        // print prefix spaces
+        cout << string(prefixSpaces, spaceChar);
+        // calc inner space count
+        innerSpaces = leafLength / 2; // need depth
+        
+        int innerSpaceCnt = 0;
+        for (vector<TreeNode *>::iterator iter = tv.begin(); iter != tv.end(); ++iter)
+        {
+            
+            // print inner spaces, 0 at init
+            cout << string(innerSpaceCnt, spaceChar);
+            innerSpaceCnt = innerSpaces;
+            
+            // print value
+            if ((*iter)->val == INT_MAX)
+                cout << noneValue;
+            else
+                cout << (*iter)->val;
+            
+            
+            if ((*iter)->left)
+            {
+                v.push_back((*iter)->left);
+            }
+            else
+            {
+                TreeNode *node = new TreeNode(INT_MAX);
+                v.push_back(node);
+            }
+            
+            if ((*iter)->right)
+            {
+                v.push_back((*iter)->right);
+            }
+            else
+            {
+                TreeNode *node = new TreeNode(INT_MAX);
+                v.push_back(node);
+            }
         }
-        cout<< p->val << "\n ";
     }
 }
+
+int Utility::treeDepth(TreeNode *root, int depth)
+{
+    if (root == NULL)
+        return depth;
+    return max(Utility::treeDepth(root->left, depth),
+               Utility::treeDepth(root->right, depth)) + 1;
+}
+
+
 
 void Utility::print(TreeNode *root)
 {
