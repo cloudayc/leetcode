@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 cloudayc. All rights reserved.
 //
 
+#include "utility.h"
 
 //#include "Reverse_Integer.cpp"
 //#include "sqrt_x.cpp"
@@ -26,11 +27,12 @@
 
 int main(int argc, const char * argv[]) {
 
-    Solution *s = new Solution();
-    
-    s->calc();
-    
-    delete s;
+    Utility::printTree(Utility::factory(5));
+//    Solution *s = new Solution();
+//    
+//    s->calc();
+//    
+//    delete s;
     
     return 0;
 }

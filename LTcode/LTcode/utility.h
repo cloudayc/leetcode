@@ -14,7 +14,7 @@
 class Utility
 {
 public:
-    static TreeNode *factory(int depth);
+    static TreeNode *factory(int depth, type_node t = top);
     static int treeDepth(TreeNode *root, int depth = 0);
     static void printTree(TreeNode *root);
     

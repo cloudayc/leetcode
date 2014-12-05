@@ -13,10 +13,11 @@
 #include <string>
 #include <vector>
 #include <iomanip>
+#include <sstream>
 
 using namespace std;
 
-TreeNode *Utility::factory(int depth)
+TreeNode *Utility::factory(int depth, type_node t)
 {
     if (!depth)
         return NULL;
@@ -24,70 +25,99 @@ TreeNode *Utility::factory(int depth)
         return NULL;
     
     TreeNode *node = new TreeNode(arc4random() % 20);
-    node->left = Utility::factory(depth - 1);
-    node->right = Utility::factory(depth - 1);
+    node->type = t;
+    
+    node->left = Utility::factory(depth - 1, l);
+    node->right = Utility::factory(depth - 1, r);
     return node;
 }
 
 void Utility::printTree(TreeNode *root)
 {
     int depth = Utility::treeDepth(root);
-    int maxLeafCount = 1 << depth;
-    int leafLength = maxLeafCount + maxLeafCount - 1;
+    int maxLeafCount = 1 << (depth - 1);
+    int leafLength = maxLeafCount * 2 - 1;
     
-    int innerSpaces = 0;
-    int prefixSpaces = leafLength / 2;
+    int innerSpaceLen = 0;
+    int prefixSpaceLen = leafLength / 2;
     
     char noneValue = '*';
-    char spaceChar = '\t';
+    char spaceChar = ' ';
+    int spaceCharIncrease = 4;
+    
     vector<TreeNode *> v;
     v.push_back(root);
-    while (!v.empty()) {
+    
+    stringstream ostream_symbol;
+    stringstream ostream_value;
+    while (!v.empty())
+    {
         vector<TreeNode *> tv(v);
         v.clear();
         
-        // calc depth
-        
         // print prefix spaces
-        cout << string(prefixSpaces, spaceChar);
-        // calc inner space count
-        innerSpaces = leafLength / 2; // need depth
+        ostream_value << string(prefixSpaceLen * spaceCharIncrease, spaceChar);
+        ostream_symbol << string(prefixSpaceLen * spaceCharIncrease, spaceChar);
         
-        int innerSpaceCnt = 0;
+        // calc inner space count
+        innerSpaceLen = 0;
+        
+        bool hasValideNode = false;
+        int spaceOccupy = 0;
+        
         for (vector<TreeNode *>::iterator iter = tv.begin(); iter != tv.end(); ++iter)
         {
+            // print inner spaces, empty "" at the beginning
+            ostream_value << string((innerSpaceLen * 2 + 1) * spaceCharIncrease + 3, spaceChar);
+            ostream_symbol << string((innerSpaceLen * 2 + 1) * spaceCharIncrease + 3, spaceChar);
             
-            // print inner spaces, 0 at init
-            cout << string(innerSpaceCnt, spaceChar);
-            innerSpaceCnt = innerSpaces;
+            innerSpaceLen = prefixSpaceLen;
             
             // print value
             if ((*iter)->val == INT_MAX)
-                cout << noneValue;
+            {
+                ostream_value << noneValue;
+                ostream_symbol << ((*iter)->type == r ? "/" : "\\");
+                spaceOccupy = 0;
+            }
             else
-                cout << (*iter)->val;
+            {
+                ostream_value << (*iter)->val;
+                ostream_symbol << ((*iter)->type == r ? "/" : "\\");
+            }
             
-            
+            TreeNode *node = nullptr;
             if ((*iter)->left)
             {
-                v.push_back((*iter)->left);
+                node = (*iter)->left;
+                hasValideNode = true;
             }
             else
-            {
-                TreeNode *node = new TreeNode(INT_MAX);
-                v.push_back(node);
-            }
+                node = new TreeNode(INT_MAX);
+            v.push_back(node);
             
             if ((*iter)->right)
             {
-                v.push_back((*iter)->right);
+                node = (*iter)->right;
+                hasValideNode = true;
             }
             else
-            {
-                TreeNode *node = new TreeNode(INT_MAX);
-                v.push_back(node);
-            }
+                node = new TreeNode(INT_MAX);
+            v.push_back(node);
         }
+        ostream_value << endl;
+        ostream_symbol << endl;
+        
+        cout << ostream_value.str();
+        cout << ostream_symbol.str();
+        ostream_value.str("");
+        ostream_symbol.str("");
+        
+        if (!hasValideNode)
+            v.clear();
+        
+        // calc prefix spaces
+        prefixSpaceLen /= 2;
     }
 }
 

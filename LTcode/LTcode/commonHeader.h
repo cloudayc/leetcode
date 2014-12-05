@@ -11,11 +11,19 @@
 
 #include <iostream>
 
+enum type_node{
+    top = -1,
+    l = 0,
+    r
+}type;
+
 struct TreeNode {
     int val;
+    type_node type;
+    
     TreeNode *left;
     TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+    TreeNode(int x) : val(x), type(top), left(NULL), right(NULL) {}
 };
 
 #endif
