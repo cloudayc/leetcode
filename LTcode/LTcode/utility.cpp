@@ -27,8 +27,8 @@ TreeNode *Utility::factory(int depth, type_node t)
     TreeNode *node = new TreeNode(arc4random() % 20);
     node->type = t;
     
-    node->left = Utility::factory(depth - 1, l);
-    node->right = Utility::factory(depth - 1, r);
+    node->left = Utility::factory(depth - 1, bNode_l);
+    node->right = Utility::factory(depth - 1, bNode_r);
     return node;
 }
 
@@ -90,14 +90,14 @@ void Utility::printTree(TreeNode *root)
             if ((*iter)->val == INT_MAX)
             {
                 ostream_value << noneValue;
-                ostream_symbol << ((*iter)->type == r ? " " : " ");
+                ostream_symbol << ((*iter)->type == bNode_r ? " " : " ");
                 spaceOvermuch = 0;
             }
             else
             {
                 spaceOvermuch = Utility::countOfDigit((*iter)->val) - 1;
                 ostream_value << (*iter)->val;
-                ostream_symbol << ((*iter)->type == r ? "\\" : "/");
+                ostream_symbol << ((*iter)->type == bNode_r ? "\\" : "/");
             }
             
             TreeNode *node = nullptr;
@@ -107,7 +107,7 @@ void Utility::printTree(TreeNode *root)
                 hasValideNode = true;
             }
             else
-                node = new TreeNode(INT_MAX, l);
+                node = new TreeNode(INT_MAX, bNode_l);
             v.push_back(node);
             
             if ((*iter)->right)
@@ -116,7 +116,7 @@ void Utility::printTree(TreeNode *root)
                 hasValideNode = true;
             }
             else
-                node = new TreeNode(INT_MAX, r);
+                node = new TreeNode(INT_MAX, bNode_r);
             v.push_back(node);
         }
         ostream_value << endl;
@@ -143,87 +143,4 @@ int Utility::treeDepth(TreeNode *root, int depth)
                Utility::treeDepth(root->right, depth)) + 1;
 }
 
-
-
-void Utility::print(TreeNode *root)
-{
-    vector<string> output;
-    
-    vector<TreeNode *> v;
-    v.push_back(root);
-    
-    int spaceCnt = 32;
-    while (!v.empty()) {
-        vector<TreeNode *> tv(v);
-        v.clear();
-        
-        bool hasValidNode = false;
-        string symbol("");
-        string values("");
-        for (vector<TreeNode *>::iterator iter = tv.begin(); iter != tv.end(); ++iter)
-        {
-            if ((*iter)->val == INT_MAX)
-                values.append("*");
-            else
-                values.append(to_string((*iter)->val));
-            values.append("  ");
-            
-            if ((*iter)->left)
-            {
-                hasValidNode = true;
-                v.push_back((*iter)->left);
-                symbol.append(" ");
-            }
-            else
-            {
-                TreeNode *node = new TreeNode(INT_MAX); // mem leak
-                v.push_back(node);
-                symbol.append(" ");
-            }
-            
-            values.append(string(spaceCnt, ' '));
-            if ((*iter)->right)
-            {
-                hasValidNode = true;
-                v.push_back((*iter)->right);
-                //                    symbol.append("\\");
-                symbol.append(" ");
-            }
-            else
-            {
-                TreeNode *node = new TreeNode(INT_MAX); // mem leak
-                v.push_back(node);
-                symbol.append(" ");
-                //                    symbol.append("-");
-            }
-            symbol.append(string(spaceCnt, ' '));
-            //                symbol.append(" ");
-        }
-        spaceCnt /= 2;
-        
-        output.push_back(values);
-        if (hasValidNode)
-            output.push_back(symbol);
-        else
-            v.clear();
-    }
-    
-    string last = output.back();
-    size_t len = last.length() / 2;
-    int flag = 0;
-    int spaceCut = 1;
-    for (vector<string>::iterator iter = output.begin(); iter != output.end(); ++iter)
-    {
-        cout << string(len - spaceCut, ' ');
-        //            cout << string(len, ' ');
-        cout << *iter << endl;
-        if (flag++ & 1)
-        {
-            len -= spaceCut;
-            spaceCut *= 2;
-        }
-        if (len <= 0)
-            len = 0;
-    }
-}
 

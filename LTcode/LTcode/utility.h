@@ -14,12 +14,10 @@
 class Utility
 {
 public:
-    static TreeNode *factory(int depth, type_node t = top);
+    static TreeNode *factory(int depth, type_node t = bNode_top);
     static int treeDepth(TreeNode *root, int depth = 0);
     static int countOfDigit(int digit);
     static void printTree(TreeNode *root);
-    
-    static void print(TreeNode *root);
 };
 
 #endif

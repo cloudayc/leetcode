@@ -12,9 +12,9 @@
 #include <iostream>
 
 enum type_node{
-    top = -1,
-    l = 0,
-    r
+    bNode_top = -1,
+    bNode_l = 0,
+    bNode_r
 };
 
 struct TreeNode {
@@ -23,7 +23,7 @@ struct TreeNode {
     
     TreeNode *left;
     TreeNode *right;
-    TreeNode(int x, type_node t = top) : val(x), type(t), left(NULL), right(NULL) {}
+    TreeNode(int x, type_node t = bNode_top) : val(x), type(t), left(NULL), right(NULL) {}
 };
 
 #endif
