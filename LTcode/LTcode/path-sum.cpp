@@ -39,12 +39,14 @@ public:
     
     void calc()
     {
-        TreeNode *root = Utility::factory(6);
+        TreeNode *root = Utility::factory(5);
         Utility::printTree(root);
         
         int sum = 0;
-        cin >> sum;
-        this->hasPathSum(root, sum);
+        while (true) {
+            cin >> sum;
+            cout << this->hasPathSum(root, sum) << endl;
+        }
     }
     
     bool hasPathSum(TreeNode *root, int sum) {
@@ -53,34 +55,44 @@ public:
         
         int s = 0;
         
+        int bitLeft = 0x02;
+        int bitRight = 0x01;
+        int bitAdded = 0x04;
+        
         stack<TreeNode *> nodeStack;
         nodeStack.push(root);
         
         stack<int> statusStack;
+        statusStack.push(0);
         
         while (!nodeStack.empty()) {
             TreeNode *node = nodeStack.top();
             
-            if (nodeStack.size() > statusStack.size())
+            int status = statusStack.top();
+            if (!(status & bitAdded))
             {
                 s += node->val;
-                statusStack.push(0);
-            }
-            int status = statusStack.top();
-            if (!(status & 0x02))
-            {
+                status |= bitAdded;
                 statusStack.pop();
-                statusStack.push(status | 0x02);
+                statusStack.push(status);
+            }
+            
+            if (!(status & bitLeft))
+            {
+                status |= bitLeft;
+                statusStack.pop();
+                statusStack.push(status);
                 if (node->left)
                 {
                     nodeStack.push(node->left);
                     statusStack.push(0);
                 }
             }
-            else if (!(status & 0x01))
+            else if (!(status & bitRight))
             {
+                status |= bitRight;
                 statusStack.pop();
-                statusStack.push(status | 0x01);
+                statusStack.push(status);
                 if (node->right)
                 {
                     nodeStack.push(node->right);
@@ -89,8 +101,10 @@ public:
             }
             else
             {
-                if (s == sum)
+                if (!node->left && !node->right && s == sum)
+                {
                     return true;
+                }
                 nodeStack.pop();
                 statusStack.pop();
                 s -= node->val;

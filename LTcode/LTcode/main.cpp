@@ -27,12 +27,11 @@
 
 int main(int argc, const char * argv[]) {
 
-    Utility::printTree(Utility::factory(5));
-//    Solution *s = new Solution();
-//    
-//    s->calc();
-//    
-//    delete s;
+    Solution *s = new Solution();
+    
+    s->calc();
+    
+    delete s;
     
     return 0;
 }

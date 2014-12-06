@@ -32,22 +32,100 @@
 /**
  * Definition for binary tree
  */
+#include "utility.h"
+
 #include <iostream>
+#include <stack>
+#include <string>
 #include <vector>
 using namespace std;
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
 
 
 class Solution {
 public:
+    void calc()
+    {
+        TreeNode *root = Utility::factory(5);
+        Utility::printTree(root);
+        
+        int sum = 0;
+        while (true) {
+            cin >> sum;
+            vector<vector<int> >v = this->pathSum(root, sum);
+            for (vector<vector<int> >::iterator iter = v.begin(); iter != v.end(); ++iter) {
+                for (vector<int>::iterator in_iter = iter->begin(); in_iter != iter->end(); ++in_iter) {
+                    cout << *in_iter << ends;
+                }
+                cout << endl;
+            }
+        }
+    }
+    
     vector<vector<int> > pathSum(TreeNode *root, int sum) {
+        
         vector<vector<int> > v;
+        if (!root)
+            return v;
+        
+        int s = 0;
+        
+        int bitLeft = 0x02;
+        int bitRight = 0x01;
+        int bitAdded = 0x04;
+        
+        vector<TreeNode *> nodeStack;
+        nodeStack.push_back(root);
+        
+        stack<int> statusStack;
+        statusStack.push(0);
+        
+        while (!nodeStack.empty()) {
+            TreeNode *node = nodeStack.back();
+            
+            int status = statusStack.top();
+            if (!(status & bitAdded))
+            {
+                s += node->val;
+                status |= bitAdded;
+                statusStack.pop();
+                statusStack.push(status);
+            }
+            
+            if (!(status & bitLeft))
+            {
+                status |= bitLeft;
+                statusStack.pop();
+                statusStack.push(status);
+                if (node->left)
+                {
+                    nodeStack.push_back(node->left);
+                    statusStack.push(0);
+                }
+            }
+            else if (!(status & bitRight))
+            {
+                status |= bitRight;
+                statusStack.pop();
+                statusStack.push(status);
+                if (node->right)
+                {
+                    nodeStack.push_back(node->right);
+                    statusStack.push(0);
+                }
+            }
+            else
+            {
+                if (!node->left && !node->right && s == sum)
+                {
+                    return v;
+                }
+                nodeStack.pop_back();
+                statusStack.pop();
+                s -= node->val;
+            }
+        }
+        
         return v;
     }
 };
