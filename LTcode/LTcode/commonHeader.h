@@ -15,7 +15,7 @@ enum type_node{
     top = -1,
     l = 0,
     r
-}type;
+};
 
 struct TreeNode {
     int val;
@@ -23,7 +23,7 @@ struct TreeNode {
     
     TreeNode *left;
     TreeNode *right;
-    TreeNode(int x) : val(x), type(top), left(NULL), right(NULL) {}
+    TreeNode(int x, type_node t = top) : val(x), type(t), left(NULL), right(NULL) {}
 };
 
 #endif

@@ -32,6 +32,19 @@ TreeNode *Utility::factory(int depth, type_node t)
     return node;
 }
 
+int Utility::countOfDigit(int digit)
+{
+    if (digit == 0)
+        return 1;
+    int cnt = 0;
+    while (digit)
+    {
+        cnt++;
+        digit /= 10;
+    }
+    return cnt;
+}
+
 void Utility::printTree(TreeNode *root)
 {
     int depth = Utility::treeDepth(root);
@@ -41,7 +54,7 @@ void Utility::printTree(TreeNode *root)
     int innerSpaceLen = 0;
     int prefixSpaceLen = leafLength / 2;
     
-    char noneValue = '*';
+    char noneValue = ' ';
     char spaceChar = ' ';
     int spaceCharIncrease = 4;
     
@@ -62,13 +75,13 @@ void Utility::printTree(TreeNode *root)
         // calc inner space count
         innerSpaceLen = 0;
         
+        int spaceOvermuch = 0;
         bool hasValideNode = false;
-        int spaceOccupy = 0;
         
         for (vector<TreeNode *>::iterator iter = tv.begin(); iter != tv.end(); ++iter)
         {
             // print inner spaces, empty "" at the beginning
-            ostream_value << string((innerSpaceLen * 2 + 1) * spaceCharIncrease + 3, spaceChar);
+            ostream_value << string((innerSpaceLen * 2 + 1) * spaceCharIncrease + 3 - spaceOvermuch, spaceChar);
             ostream_symbol << string((innerSpaceLen * 2 + 1) * spaceCharIncrease + 3, spaceChar);
             
             innerSpaceLen = prefixSpaceLen;
@@ -77,13 +90,14 @@ void Utility::printTree(TreeNode *root)
             if ((*iter)->val == INT_MAX)
             {
                 ostream_value << noneValue;
-                ostream_symbol << ((*iter)->type == r ? "/" : "\\");
-                spaceOccupy = 0;
+                ostream_symbol << ((*iter)->type == r ? " " : " ");
+                spaceOvermuch = 0;
             }
             else
             {
+                spaceOvermuch = Utility::countOfDigit((*iter)->val) - 1;
                 ostream_value << (*iter)->val;
-                ostream_symbol << ((*iter)->type == r ? "/" : "\\");
+                ostream_symbol << ((*iter)->type == r ? "\\" : "/");
             }
             
             TreeNode *node = nullptr;
@@ -93,7 +107,7 @@ void Utility::printTree(TreeNode *root)
                 hasValideNode = true;
             }
             else
-                node = new TreeNode(INT_MAX);
+                node = new TreeNode(INT_MAX, l);
             v.push_back(node);
             
             if ((*iter)->right)
@@ -102,14 +116,14 @@ void Utility::printTree(TreeNode *root)
                 hasValideNode = true;
             }
             else
-                node = new TreeNode(INT_MAX);
+                node = new TreeNode(INT_MAX, r);
             v.push_back(node);
         }
         ostream_value << endl;
         ostream_symbol << endl;
         
-        cout << ostream_value.str();
         cout << ostream_symbol.str();
+        cout << ostream_value.str();
         ostream_value.str("");
         ostream_symbol.str("");
         
@@ -158,7 +172,6 @@ void Utility::print(TreeNode *root)
             {
                 hasValidNode = true;
                 v.push_back((*iter)->left);
-                //                    symbol.append("/");
                 symbol.append(" ");
             }
             else
@@ -166,7 +179,6 @@ void Utility::print(TreeNode *root)
                 TreeNode *node = new TreeNode(INT_MAX); // mem leak
                 v.push_back(node);
                 symbol.append(" ");
-                //                    symbol.append("-");
             }
             
             values.append(string(spaceCnt, ' '));
