@@ -118,7 +118,11 @@ public:
             {
                 if (!node->left && !node->right && s == sum)
                 {
-                    return v;
+                    vector<int> val;
+                    for (vector<TreeNode *>::iterator iter = nodeStack.begin(); iter != nodeStack.end(); ++iter) {
+                        val.push_back((*iter)->val);
+                    }
+                    v.push_back(val);
                 }
                 nodeStack.pop_back();
                 statusStack.pop();

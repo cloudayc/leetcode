@@ -31,24 +31,28 @@
 
 #include <iostream>
 #include <stack>
+#include <map>
 #include <string>
 using namespace std;
+
 
 class Solution {
 public:
     
     void calc()
     {
-        TreeNode *root = Utility::factory(5);
+        TreeNode *root = Utility::factory(4);
         Utility::printTree(root);
         
         int sum = 0;
         while (true) {
             cin >> sum;
             cout << this->hasPathSum(root, sum) << endl;
+            cout << this->hasPathSumBfs(root, sum) << endl;
         }
     }
     
+    // dfs + stack
     bool hasPathSum(TreeNode *root, int sum) {
         if (!root)
             return false;
@@ -113,4 +117,39 @@ public:
         
         return false;
     }
+    
+    // bfs + map
+    bool hasPathSumBfs(TreeNode *root, int sum) {
+        if (!root)
+            return false;
+        
+        typedef map<TreeNode *, int> mapNode;
+        
+        mapNode v;
+        
+        v[root] = root->val;
+        
+        while (!v.empty()) {
+            
+            mapNode tv(v);
+            v.clear();
+            
+            for (mapNode::iterator iter = tv.begin(); iter != tv.end(); ++iter) {
+                TreeNode *node = iter->first;
+                
+                if (node->left)
+                    v.insert(mapNode::value_type(node->left, iter->second + node->left->val));
+                if (node->right)
+                    v.insert(mapNode::value_type(node->right, iter->second + node->right->val));
+                
+                if (!node->left && !node->right && iter->second == sum)
+                    return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    // dfs + recursive
+    
 };
