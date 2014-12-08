@@ -20,12 +20,8 @@
  */
 #include <iostream>
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
+#include "commonHeader.h"
+
 
 class Solution {
 public:
@@ -33,8 +29,21 @@ public:
     {
         
     }
+    int checkBanlance(TreeNode * root, int depth)
+    {
+        if (!root)
+            return depth;
+        depth++;
+        int leftDepth = this->checkBanlance(root->left, depth);
+        int rightDepth = this->checkBanlance(root->right, depth);
+        if (leftDepth == -1 || rightDepth == -1 || abs(leftDepth - rightDepth) > 1)
+            return -1;
+        return leftDepth > rightDepth ? leftDepth : rightDepth;
+    }
     
     bool isBalanced(TreeNode *root) {
+        if (checkBanlance(root, 0) == -1)
+            return false;
         return true;
     }
 };

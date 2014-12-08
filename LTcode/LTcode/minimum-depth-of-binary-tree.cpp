@@ -20,12 +20,10 @@
  */
 #include <iostream>
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
+#include <vector>
+
+#include "commonHeader.h"
+using namespace std;
 
 class Solution {
 public:
@@ -35,6 +33,31 @@ public:
     }
     
     int minDepth(TreeNode *root) {
+        if (!root)
+            return 0;
+        
+        vector<TreeNode *>v;
+        v.push_back(root);
+        
+        int depth = 1;
+        while (!v.empty())
+        {
+            vector<TreeNode *> tv(v);
+            v.clear();
+            
+            for (vector<TreeNode *>::iterator iter = tv.begin(); iter != tv.end(); ++iter)
+            {
+                TreeNode *node = *iter;
+                if (!node->left && !node->right)
+                    return depth;
+                if (node->left)
+                    v.push_back(node->left);
+                if (node->right)
+                    v.push_back(node->right);
+            }
+            ++depth;
+        }
+        
         return 0;
     }
 };
