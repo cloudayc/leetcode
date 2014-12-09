@@ -10,6 +10,10 @@
 #define LTcode_commonHeader_h
 
 #include <iostream>
+#include <vector>
+#include <string>
+#include <stack>
+#include <map>
 
 enum type_node{
     bNode_top = -1,
@@ -25,5 +29,13 @@ struct TreeNode {
     TreeNode *right;
     TreeNode(int x, type_node t = bNode_top) : val(x), type(t), left(NULL), right(NULL) {}
 };
+
+
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
 
 #endif
