@@ -16,6 +16,7 @@
 		295FB1F31A369A0500F56ED5 /* copy-list-with-random-pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1F21A369A0500F56ED5 /* copy-list-with-random-pointer.cpp */; };
 		295FB1F51A369A2A00F56ED5 /* lru-cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1F41A369A2A00F56ED5 /* lru-cache.cpp */; };
 		295FB1F71A369A5000F56ED5 /* maximum-subarray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1F61A369A5000F56ED5 /* maximum-subarray.cpp */; };
+		29B6BCB71A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B6BCB61A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp */; };
 		29DBA2A21A23456D002FB30B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2A11A23456D002FB30B /* main.cpp */; };
 		29DBA2A91A2345A7002FB30B /* Reverse_Integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2A81A2345A7002FB30B /* Reverse_Integer.cpp */; };
 		29DBA2AB1A242139002FB30B /* sqrt_x.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2AA1A242139002FB30B /* sqrt_x.cpp */; };
@@ -64,6 +65,7 @@
 		295FB1F21A369A0500F56ED5 /* copy-list-with-random-pointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "copy-list-with-random-pointer.cpp"; sourceTree = "<group>"; };
 		295FB1F41A369A2A00F56ED5 /* lru-cache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "lru-cache.cpp"; sourceTree = "<group>"; };
 		295FB1F61A369A5000F56ED5 /* maximum-subarray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "maximum-subarray.cpp"; sourceTree = "<group>"; };
+		29B6BCB61A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "remove-duplicates-from-sorted-list.cpp"; sourceTree = "<group>"; };
 		29DBA29E1A23456D002FB30B /* LTcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LTcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DBA2A11A23456D002FB30B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		29DBA2A81A2345A7002FB30B /* Reverse_Integer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reverse_Integer.cpp; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				29DBA2D41A25D929002FB30B /* balanced-binary-tree.cpp */,
 				295FB1E61A35EB3000F56ED5 /* remove-duplicates-from-sorted-array.cpp */,
 				295FB1E81A3698D600F56ED5 /* merge-k-sorted-lists.cpp */,
+				29B6BCB61A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp */,
 				295FB1EA1A3698FD00F56ED5 /* letter-combinations-of-a-phone-number.cpp */,
 				295FB1EC1A36996D00F56ED5 /* merge-sorted-array.cpp */,
 				295FB1EE1A36999F00F56ED5 /* two-sum.cpp */,
@@ -238,6 +241,7 @@
 				295FB1E71A35EB3000F56ED5 /* remove-duplicates-from-sorted-array.cpp in Sources */,
 				29DBA2BB1A242AE1002FB30B /* RemoveElement.cpp in Sources */,
 				295FB1F51A369A2A00F56ED5 /* lru-cache.cpp in Sources */,
+				29B6BCB71A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp in Sources */,
 				29DBA2A91A2345A7002FB30B /* Reverse_Integer.cpp in Sources */,
 				295FB1F11A3699CC00F56ED5 /* single-number.cpp in Sources */,
 				29DBA2C51A25D7E2002FB30B /* palindrome-number.cpp in Sources */,

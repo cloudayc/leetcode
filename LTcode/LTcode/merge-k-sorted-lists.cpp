@@ -18,10 +18,71 @@ using namespace std;
 
 class Solution {
 public:
+    ListNode *mergeList(ListNode *olist, ListNode *tlist)
+    {
+        if (!olist && !tlist)
+            return NULL;
+        if (!olist)
+            return tlist;
+        if (!tlist)
+            return olist;
+        
+        ListNode *head = NULL;
+        if (olist->val <= tlist->val)
+        {
+            head = olist;
+            olist = olist->next;
+        }
+        else
+        {
+            head = tlist;
+            tlist = tlist->next;
+        }
+        
+        ListNode *floatHead = head;
+        while (olist || tlist)
+        {
+            if (!tlist)
+            {
+                floatHead->next = olist;
+                break;
+            }
+            if (!olist)
+            {
+                floatHead->next = tlist;
+                break;
+            }
+            if (olist->val <= tlist->val)
+            {
+                floatHead->next = olist;
+                olist = olist->next;
+            }
+            else
+            {
+                floatHead->next = tlist;
+                tlist = tlist->next;
+            }
+            floatHead = floatHead->next;
+        }
+        
+        return head;
+    }
+    
     ListNode *mergeKLists(vector<ListNode *> &lists) {
         
-        ListNode *L = nullptr;
+        ListNode *head = nullptr;
         
-        return L;
+        for (vector<ListNode *>::iterator iter = lists.begin(); iter != lists.end(); ++iter)
+        {
+            if (!head)
+            {
+                head = *iter;
+            }
+            else
+            {
+                head = this->mergeList(head, *iter);
+            }
+        }
+        return head;
     }
 };

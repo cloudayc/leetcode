@@ -20,11 +20,36 @@
  
  */
 
+#include <stdio.h>
 
 class Solution {
 public:
+    void calc()
+    {
+        while (1)
+        {
+            int len = 1;
+            int a[len];
+            for (int i = 0; i < len; ++i) {
+                scanf("%d", &a[i]);
+            }
+            int n = this->removeDuplicates(a, len);
+            
+            for (int i = 0; i < len; ++i) {
+                printf("%d", a[i]);
+            }
+            printf(" %d\n", n);
+        }
+    }
     int removeDuplicates(int A[], int n) {
-        
-        return 0;
+        if (n <= 1)
+            return n;
+        int offset = 0;
+        for (int i = 1; i < n; ++i)
+        {
+            if (A[i] != A[offset])
+                A[++offset] = A[i];
+        }
+        return offset + 1;
     }
 };
