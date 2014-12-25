@@ -26,7 +26,8 @@
 //#include "path-sum.cpp"
 //#include "path-sum-ii.cpp"
 
-#include "remove-duplicates-from-sorted-array.cpp"
+//#include "remove-duplicates-from-sorted-array.cpp"
+#include "merge-k-sorted-lists.cpp"
 int main(int argc, const char * argv[]) {
 
     Solution *s = new Solution();
