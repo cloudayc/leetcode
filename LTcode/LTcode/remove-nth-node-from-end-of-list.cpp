@@ -29,8 +29,12 @@
 class Solution {
 public:
     ListNode *removeNthFromEnd(ListNode *head, int n) {
+        if (!head)
+            return NULL;
         ListNode *L = new ListNode(0);
         L->next = head;
+        ListNode *H = L;
+        
         ListNode *point = head;
         while (point != NULL)
         {
@@ -40,12 +44,12 @@ public:
             }
             else
             {
-                L->next = L->next->next;
+                L = L->next;
             }
             point = point->next;
         }
+        L->next = L->next->next;
         
-        
-        return L->next;
+        return H->next;
     }
 };
