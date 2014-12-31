@@ -10,6 +10,9 @@
 		291EA7FB1A4BBE0000D2C877 /* remove-duplicates-from-sorted-list-ii.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291EA7FA1A4BBE0000D2C877 /* remove-duplicates-from-sorted-list-ii.cpp */; };
 		291EA7FD1A4BBE3300D2C877 /* remove-duplicates-from-sorted-array-ii.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291EA7FC1A4BBE3300D2C877 /* remove-duplicates-from-sorted-array-ii.cpp */; };
 		291EA7FF1A4BBE4A00D2C877 /* remove-nth-node-from-end-of-list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291EA7FE1A4BBE4A00D2C877 /* remove-nth-node-from-end-of-list.cpp */; };
+		291EA8011A53ADC300D2C877 /* reverse-words-in-a-string.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291EA8001A53ADC300D2C877 /* reverse-words-in-a-string.cpp */; };
+		291EA8031A53ADDE00D2C877 /* linked-list-cycle-ii.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291EA8021A53ADDE00D2C877 /* linked-list-cycle-ii.cpp */; };
+		291EA8051A53ADF100D2C877 /* Regular Expression Matching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 291EA8041A53ADF100D2C877 /* Regular Expression Matching.cpp */; };
 		295FB1E71A35EB3000F56ED5 /* remove-duplicates-from-sorted-array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1E61A35EB3000F56ED5 /* remove-duplicates-from-sorted-array.cpp */; };
 		295FB1E91A3698D600F56ED5 /* merge-k-sorted-lists.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1E81A3698D600F56ED5 /* merge-k-sorted-lists.cpp */; };
 		295FB1EB1A3698FD00F56ED5 /* letter-combinations-of-a-phone-number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1EA1A3698FD00F56ED5 /* letter-combinations-of-a-phone-number.cpp */; };
@@ -62,6 +65,9 @@
 		291EA7FA1A4BBE0000D2C877 /* remove-duplicates-from-sorted-list-ii.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "remove-duplicates-from-sorted-list-ii.cpp"; sourceTree = "<group>"; };
 		291EA7FC1A4BBE3300D2C877 /* remove-duplicates-from-sorted-array-ii.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "remove-duplicates-from-sorted-array-ii.cpp"; sourceTree = "<group>"; };
 		291EA7FE1A4BBE4A00D2C877 /* remove-nth-node-from-end-of-list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "remove-nth-node-from-end-of-list.cpp"; sourceTree = "<group>"; };
+		291EA8001A53ADC300D2C877 /* reverse-words-in-a-string.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "reverse-words-in-a-string.cpp"; sourceTree = "<group>"; };
+		291EA8021A53ADDE00D2C877 /* linked-list-cycle-ii.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "linked-list-cycle-ii.cpp"; sourceTree = "<group>"; };
+		291EA8041A53ADF100D2C877 /* Regular Expression Matching.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Regular Expression Matching.cpp"; sourceTree = "<group>"; };
 		295FB1E61A35EB3000F56ED5 /* remove-duplicates-from-sorted-array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "remove-duplicates-from-sorted-array.cpp"; sourceTree = "<group>"; };
 		295FB1E81A3698D600F56ED5 /* merge-k-sorted-lists.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "merge-k-sorted-lists.cpp"; sourceTree = "<group>"; };
 		295FB1EA1A3698FD00F56ED5 /* letter-combinations-of-a-phone-number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "letter-combinations-of-a-phone-number.cpp"; sourceTree = "<group>"; };
@@ -170,6 +176,9 @@
 				295FB1F21A369A0500F56ED5 /* copy-list-with-random-pointer.cpp */,
 				295FB1F41A369A2A00F56ED5 /* lru-cache.cpp */,
 				295FB1F61A369A5000F56ED5 /* maximum-subarray.cpp */,
+				291EA8001A53ADC300D2C877 /* reverse-words-in-a-string.cpp */,
+				291EA8021A53ADDE00D2C877 /* linked-list-cycle-ii.cpp */,
+				291EA8041A53ADF100D2C877 /* Regular Expression Matching.cpp */,
 			);
 			path = LTcode;
 			sourceTree = "<group>";
@@ -254,11 +263,14 @@
 				295FB1F51A369A2A00F56ED5 /* lru-cache.cpp in Sources */,
 				29B6BCB71A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp in Sources */,
 				29DBA2A91A2345A7002FB30B /* Reverse_Integer.cpp in Sources */,
+				291EA8011A53ADC300D2C877 /* reverse-words-in-a-string.cpp in Sources */,
 				295FB1F11A3699CC00F56ED5 /* single-number.cpp in Sources */,
 				29DBA2C51A25D7E2002FB30B /* palindrome-number.cpp in Sources */,
 				29DBA2AD1A242A2B002FB30B /* PlusOne.cpp in Sources */,
 				29DBA2B91A242AC2002FB30B /* Count_and_Say.cpp in Sources */,
+				291EA8051A53ADF100D2C877 /* Regular Expression Matching.cpp in Sources */,
 				29DBA2AB1A242139002FB30B /* sqrt_x.cpp in Sources */,
+				291EA8031A53ADDE00D2C877 /* linked-list-cycle-ii.cpp in Sources */,
 				29DBA2D31A25D909002FB30B /* minimum-depth-of-binary-tree.cpp in Sources */,
 				295FB1EB1A3698FD00F56ED5 /* letter-combinations-of-a-phone-number.cpp in Sources */,
 				291EA7FD1A4BBE3300D2C877 /* remove-duplicates-from-sorted-array-ii.cpp in Sources */,
