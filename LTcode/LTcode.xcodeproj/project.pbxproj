@@ -22,6 +22,7 @@
 		295FB1F31A369A0500F56ED5 /* copy-list-with-random-pointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1F21A369A0500F56ED5 /* copy-list-with-random-pointer.cpp */; };
 		295FB1F51A369A2A00F56ED5 /* lru-cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1F41A369A2A00F56ED5 /* lru-cache.cpp */; };
 		295FB1F71A369A5000F56ED5 /* maximum-subarray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 295FB1F61A369A5000F56ED5 /* maximum-subarray.cpp */; };
+		29B5FB441A53F7BF0009696F /* single-number-ii.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B5FB431A53F7BF0009696F /* single-number-ii.cpp */; };
 		29B6BCB71A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29B6BCB61A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp */; };
 		29DBA2A21A23456D002FB30B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2A11A23456D002FB30B /* main.cpp */; };
 		29DBA2A91A2345A7002FB30B /* Reverse_Integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 29DBA2A81A2345A7002FB30B /* Reverse_Integer.cpp */; };
@@ -77,6 +78,7 @@
 		295FB1F21A369A0500F56ED5 /* copy-list-with-random-pointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "copy-list-with-random-pointer.cpp"; sourceTree = "<group>"; };
 		295FB1F41A369A2A00F56ED5 /* lru-cache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "lru-cache.cpp"; sourceTree = "<group>"; };
 		295FB1F61A369A5000F56ED5 /* maximum-subarray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "maximum-subarray.cpp"; sourceTree = "<group>"; };
+		29B5FB431A53F7BF0009696F /* single-number-ii.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "single-number-ii.cpp"; sourceTree = "<group>"; };
 		29B6BCB61A381DFD008CEBB7 /* remove-duplicates-from-sorted-list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "remove-duplicates-from-sorted-list.cpp"; sourceTree = "<group>"; };
 		29DBA29E1A23456D002FB30B /* LTcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LTcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DBA2A11A23456D002FB30B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				295FB1EC1A36996D00F56ED5 /* merge-sorted-array.cpp */,
 				295FB1EE1A36999F00F56ED5 /* two-sum.cpp */,
 				295FB1F01A3699CC00F56ED5 /* single-number.cpp */,
+				29B5FB431A53F7BF0009696F /* single-number-ii.cpp */,
 				295FB1F21A369A0500F56ED5 /* copy-list-with-random-pointer.cpp */,
 				295FB1F41A369A2A00F56ED5 /* lru-cache.cpp */,
 				295FB1F61A369A5000F56ED5 /* maximum-subarray.cpp */,
@@ -257,6 +260,7 @@
 				29DBA2CF1A25D8B4002FB30B /* pascals-triangle.cpp in Sources */,
 				295FB1F71A369A5000F56ED5 /* maximum-subarray.cpp in Sources */,
 				291EA7FF1A4BBE4A00D2C877 /* remove-nth-node-from-end-of-list.cpp in Sources */,
+				29B5FB441A53F7BF0009696F /* single-number-ii.cpp in Sources */,
 				29DBA2CD1A25D88E002FB30B /* pascals-triangle-ii.cpp in Sources */,
 				295FB1E71A35EB3000F56ED5 /* remove-duplicates-from-sorted-array.cpp in Sources */,
 				29DBA2BB1A242AE1002FB30B /* RemoveElement.cpp in Sources */,

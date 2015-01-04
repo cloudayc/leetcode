@@ -33,10 +33,42 @@ using namespace std;
 
 class Solution {
 public:
+    void calc()
+    {
+        while (true)
+        {
+            string str;
+            getline(cin, str);
+            this->reverseWords(str);
+            cout << str << endl;
+        }
+    }
+    
+    void removeExtraSpaces(string &s)
+    {
+        int len = 0;
+        bool needSpace = false;
+        for (int i = 0; i < s.length(); ++i)
+        {
+            if (s[i] != ' ')
+            {
+                s[len++] = s[i];
+                needSpace = true;
+            }
+            else if (needSpace)
+            {
+                s[len++] = s[i];
+                needSpace = false;
+            }
+        }
+        if (len - 1 >= 0 && s[len - 1] == ' ')
+            --len;
+        s.resize(len);
+    }
     
     void reverseString(string &s, int left, int right)
     {
-        while (left < right)
+        while (left <= right)
         {
             char t = s[left];
             s[left] = s[right];
@@ -46,14 +78,15 @@ public:
         }
         
     }
+    
     void reverseWords(string &s) {
-        for (size_t i = 0; i < s.size() / 2; ++i)
-        {
-            char t = s[i];
-            s[i] = s[s.size() - i - 1];
-            s[s.size() - i - 1] = t;
-        }
-        int left = 0;
+        if (s.length() == 0)
+            return;
+        this->removeExtraSpaces(s);
+        
+        this->reverseString(s, 0, s.size() - 1);
+        
+        int left = -1;
         int right = 0;
         int flag = 0;
         for (int i = 0; i < s.size(); ++i)
@@ -61,16 +94,18 @@ public:
             if (flag == 0 && s[i] != ' ')
             {
                 flag = 1;
-                left = i;
+                if (left == -1)
+                    left = i;
             }
             else if (flag == 1 && s[i] == ' ')
             {
                 flag = 0;
                 right = i - 1;
                 this->reverseString(s, left, right);
+                left = -1;
             }
         }
         if (flag == 1)
-            this->reverseString(s, left, right);
+            this->reverseString(s, left, s.size() - 1);
     }
 };

@@ -27,6 +27,8 @@
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
+        ListNode *l;
         
+        return l;
     }
 };
