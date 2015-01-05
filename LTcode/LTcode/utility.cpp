@@ -17,6 +17,43 @@
 
 using namespace std;
 
+ListNode *Utility::ListFacetory(int n)
+{
+    ListNode *L = new ListNode(arc4random() % 100);
+    
+    ListNode *f = L;
+    while (--n)
+    {
+        f->next = new ListNode(arc4random() % 100);
+        f = f->next;
+    }
+    
+    return L;
+}
+
+void Utility::printList(ListNode *L)
+{
+    while (L)
+    {
+        cout << L->val << "->";
+        L = L->next;
+    }
+    cout << "NULL" << endl;
+}
+
+
+ListNode *Utility::reverseList(ListNode *L)
+{
+    ListNode *lastNode = NULL;
+    while (L) {
+        ListNode *t = L->next;
+        L->next = lastNode;
+        lastNode = L;
+        L = t;
+    }
+    return lastNode;
+}
+
 TreeNode *Utility::factory(int depth, type_node t)
 {
     if (!depth)
@@ -142,5 +179,17 @@ int Utility::treeDepth(TreeNode *root, int depth)
     return max(Utility::treeDepth(root->left, depth),
                Utility::treeDepth(root->right, depth)) + 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 

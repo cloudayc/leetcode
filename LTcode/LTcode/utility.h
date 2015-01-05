@@ -14,6 +14,11 @@
 class Utility
 {
 public:
+    static ListNode *ListFacetory(int n);
+    static void printList(ListNode *L);
+    
+    static ListNode *reverseList(ListNode *L);
+    
     static TreeNode *factory(int depth, type_node t = bNode_top);
     static int treeDepth(TreeNode *root, int depth = 0);
     static int countOfDigit(int digit);
