@@ -18,9 +18,21 @@
 class Solution {
 public:
     int singleNumber(int A[], int n) {
+        int times[32] = {0};
         
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < 32; ++j) {
+                times[j] += (A[i] & (1 << j)) ? 1 : 0;
+            }
+        }
         
-        return 0;
+        int number = 0;
+        for (int i = 0; i < 32; ++i)
+        {
+            number |= ((times[i] % 3) << i);
+        }
+        
+        return number;
     }
     
 };

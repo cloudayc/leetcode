@@ -23,7 +23,9 @@
  * };
  */
 
+#include <map>
 #include "commonHeader.h"
+using namespace std;
 
 struct RandomListNode {
     int label;
@@ -34,9 +36,34 @@ struct RandomListNode {
 class Solution {
 public:
     RandomListNode *copyRandomList(RandomListNode *head) {
+        if (!head)
+            return NULL;
         
-        RandomListNode *RL;
+        RandomListNode *RL = new RandomListNode(0);
+        RandomListNode *HL = RL;
+
+        map<int, RandomListNode *> i2RLmap;
+        map<RandomListNode *, int> r2Imap;
+        while (head)
+        {
+            RL->next = new RandomListNode(head->label);
+            if (head->random)
+                r2Imap[RL->next] = head->random->label;
+            i2RLmap[head->label] = RL->next;
+            RL = RL->next;
+            head = head->next;
+        }
         
-        return RL;
+        map<int, RandomListNode *>::iterator it;
+        for (map<RandomListNode *, int>::iterator iter = r2Imap.begin(); iter != r2Imap.end(); ++iter)
+        {
+            it = i2RLmap.find(iter->second);
+            if (it != i2RLmap.end())
+            {
+                iter->first->random = it->second;
+            }
+        }
+        
+        return HL->next;
     }
 };
