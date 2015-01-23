@@ -44,11 +44,7 @@ public:
         {
             string s;
             cin >> s;
-            vector<Node *> n = this->structureExpression(s.c_str());
-            for (vector<Node *>::iterator iter = n.begin(); iter != n.end(); ++iter)
-            {
-                (*iter)->log();
-            }
+            this->isMatch(nullptr, s.c_str());
         }
     }
     
@@ -95,7 +91,35 @@ public:
         return v;
     }
     
-    bool isMatch(const char *s, const char *p) {
+//    Some examples:
+//    isMatch("aa","a") → false
+//    isMatch("aa","aa") → true
+//    isMatch("aaa","aa") → false
+//    isMatch("aa", "a*") → true
+//    isMatch("aa", ".*") → true
+//    isMatch("ab", ".*") → true
+//    isMatch("aab", "c*a*b") → true
+    // 1, match "" -> "a*" or "a*c*b*"
+    // 2, match repeated sub string like "ababababcd" -> "ab*ab*cd"
+    bool isMatch(const char *s, const char *p)
+    {
+        vector<Node *> nodes = this->structureExpression(p);
+        for (vector<Node *>::iterator iter = nodes.begin(); iter != nodes.end(); ++iter)
+        {
+            (*iter)->log();
+        }
+        
         return false;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
