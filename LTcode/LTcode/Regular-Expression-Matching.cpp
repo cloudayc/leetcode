@@ -44,18 +44,7 @@ public:
         {
             string s;
             cin >> s;
-            cout << s.length();
-            char *p = new char[s.length() + 1];
-            strcpy(p, s.c_str());
-            p[s.length()] = 0;
-            //            const char *p = s.c_str();
-            while(p)
-            {
-                printf("%c_", *p++);
-                //                cout << *p++ << '_';
-            }
-            return;
-            vector<Node *> n = this->structureExpression(p);
+            vector<Node *> n = this->structureExpression(s.c_str());
             for (vector<Node *>::iterator iter = n.begin(); iter != n.end(); ++iter)
             {
                 (*iter)->log();
@@ -86,14 +75,14 @@ public:
         vector<Node *> v;
         int start = -1;
         int current = 0;
-        while (p != NULL) {
+        while (*p) {
             if (start == -1)
                 start = current;
             if (*p == '*')
             {
-                nodeType t = (current - 1 == start) ? dynamic : constant;
-                Node *node = new Node(t, current - 1, start);
-                v.push_back(node);
+                if (current - 1 > start)
+                    v.push_back(new Node(constant, start, current - 2));
+                v.push_back(new Node(dynamic, current - 1, current - 1));
                 start = -1;
             }
             current++;
